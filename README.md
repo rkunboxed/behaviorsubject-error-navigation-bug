@@ -1,4 +1,4 @@
-# flutter_test_app
+# Potential RxDart BehaviorSubject Bug
 
 A new Flutter project.
 
