@@ -54,10 +54,10 @@ class CoolStuff extends StatelessWidget {
               if (snapshot.hasError) {
                 return RaisedButton(
                   onPressed: () { Navigator.of(context).popAndPushNamed('/'); },
-                  child: Text('ERROR - GET ME OUT OF HERE'),
+                  child: const Text('ERROR - GET ME OUT OF HERE'),
                 );
               }
-              return Center(child: const CircularProgressIndicator());
+              return const SizedBox(height: 30);
             }
           ),
           Row(

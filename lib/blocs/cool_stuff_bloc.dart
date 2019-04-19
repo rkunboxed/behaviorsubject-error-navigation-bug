@@ -1,10 +1,10 @@
-import 'package:rxdart/rxdart.dart';
+import 'dart:async';
 import 'dart:math';
 
 class CoolStuffBloc {
 
-  final _coolStuff = BehaviorSubject<String>();
-  Observable<String> get coolStuff => _coolStuff.stream;
+  final _coolStuff = StreamController<String>.broadcast();
+  Stream<String> get coolStuff => _coolStuff.stream;
 
   fetchCoolStuff(bool forceError) {
     if (forceError == true){
@@ -18,7 +18,6 @@ class CoolStuffBloc {
 
   dispose() {
     print('DISPOSING BLOC');
-    _coolStuff.drain();
     _coolStuff.close();
   }
 }
